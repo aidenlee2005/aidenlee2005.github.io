@@ -1184,6 +1184,19 @@ section.light {
         padding: 60px 0;
     }
 
+    .hero-shell {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-photo {
+        height: 350px;
+    }
+
+    .hero-image {
+        max-height: 350px;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         gap: 2rem;
