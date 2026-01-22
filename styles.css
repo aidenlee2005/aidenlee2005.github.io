@@ -1305,6 +1305,27 @@ section.light {
     }
 }
 
+/* iPad 等中等屏幕：恢复 hero 双栏布局，保持菜单为移动样式 */
+@media (min-width: 769px) and (max-width: 900px) {
+    .hero-shell {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .hero-photo {
+        height: 100%;
+        order: 0;
+    }
+
+    .hero-image {
+        max-height: 420px;
+    }
+}
+
 @media (max-width: 480px) {
     .hero-text h1 {
         font-size: 2rem;
