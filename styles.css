@@ -127,6 +127,10 @@ body {
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
+    padding: 12px;
+    margin: -12px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .burger div {

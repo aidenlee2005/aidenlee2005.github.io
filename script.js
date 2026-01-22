@@ -3,7 +3,6 @@ const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
 
 function toggleMenu(e) {
-    e.preventDefault();
     e.stopPropagation();
     nav.classList.toggle('active');
     burger.classList.toggle('active');
