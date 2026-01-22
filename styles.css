@@ -1158,7 +1158,9 @@ section.light {
         box-shadow: var(--shadow-md);
         padding: 2rem 0;
         gap: 0;
-        z-index: 999;
+        z-index: 1001;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-links.active {
