@@ -2,10 +2,16 @@
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
 
-burger.addEventListener('click', () => {
+// 添加触摸和点击事件
+function toggleMenu(e) {
+    e.stopPropagation();
     nav.classList.toggle('active');
     burger.classList.toggle('active');
-});
+    console.log('Menu toggled:', nav.classList.contains('active'));
+}
+
+burger.addEventListener('click', toggleMenu);
+burger.addEventListener('touchstart', toggleMenu, { passive: true });
 
 // 点击导航链接后关闭菜单
 document.querySelectorAll('.nav-links a').forEach(link => {
@@ -13,6 +19,16 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         nav.classList.remove('active');
         burger.classList.remove('active');
     });
+});
+
+// 点击页面其他地方关闭菜单
+document.addEventListener('click', (e) => {
+    if (nav.classList.contains('active') && 
+        !nav.contains(e.target) && 
+        !burger.contains(e.target)) {
+        nav.classList.remove('active');
+        burger.classList.remove('active');
+    }
 });
 
 // 平滑滚动

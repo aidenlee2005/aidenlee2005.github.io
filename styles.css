@@ -1156,10 +1156,10 @@ section.light {
         flex-direction: column;
         background: white;
         width: 280px;
-        text-align: center;
+        text-align: left;
         transition: right 0.3s ease;
-        box-shadow: var(--shadow-md);
-        padding: 2rem 0;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        padding: 0;
         gap: 0;
         z-index: 9999;
         height: calc(100vh - 70px);
@@ -1168,13 +1168,24 @@ section.light {
 
     .nav-links li {
         width: 100%;
-        padding: 1.5rem 0;
+        padding: 0;
         border-bottom: 1px solid #f0f0f0;
     }
 
     .nav-links li a {
         display: block;
         width: 100%;
+        padding: 1.2rem 1.5rem;
+        font-size: 1rem;
+        transition: background 0.2s;
+    }
+
+    .nav-links li a:hover {
+        background: #f8f9fa;
+    }
+
+    .nav-links li a::after {
+        display: none;
     }
 
     .nav-links.active {
@@ -1184,6 +1195,8 @@ section.light {
     .burger {
         display: flex !important;
         z-index: 10000;
+        padding: 10px;
+        margin: -10px;
     }
 
     .burger.active .line1 {
