@@ -137,10 +137,17 @@ body {
 
 @media (max-width: 900px) and (min-width: 769px) {
     .nav-links {
-        display: none;
+        display: none !important;
     }
     .burger {
         display: flex;
+    }
+}
+
+/* 768px 以下时确保 burger 显示 */
+@media (max-width: 768px) {
+    .burger {
+        display: flex !important;
     }
 }
 
@@ -1149,7 +1156,7 @@ section.light {
 /* ============ 响应式设计 ============ */
 @media (max-width: 768px) {
     .nav-links {
-        display: flex;
+        display: flex !important;
         position: fixed;
         right: -200px;
         top: 80px;
@@ -1163,8 +1170,9 @@ section.light {
         gap: 0.3rem;
         z-index: 9999;
         height: auto;
+        max-height: calc(100vh - 100px);
         border-radius: 12px;
-        overflow: visible;
+        overflow-y: auto;
     }
 
     .nav-links li {
