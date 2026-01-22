@@ -38,20 +38,30 @@ document.addEventListener('DOMContentLoaded', function() {
         // 图片加载完成后添加loaded类
         img.addEventListener('load', function() {
             this.classList.add('loaded');
+            // 给父元素也添加loaded类,隐藏加载动画
+            const parent = this.closest('.photo-item');
+            if (parent) {
+                parent.classList.add('loaded');
+            }
         });
         
         // 如果图片已经缓存，立即触发loaded
-        if (img.complete) {
+        if (img.complete && img.naturalHeight !== 0) {
             img.classList.add('loaded');
+            const parent = img.closest('.photo-item');
+            if (parent) {
+                parent.classList.add('loaded');
+            }
         }
-    });
-
-    // 图片预加载占位
-    const allImages = document.querySelectorAll('img');
-    allImages.forEach(img => {
-        const placeholder = document.createElement('div');
-        placeholder.style.backgroundColor = '#f0f0f0';
-        placeholder.style.borderRadius = 'inherit';
+        
+        // 添加错误处理
+        img.addEventListener('error', function() {
+            const parent = this.closest('.photo-item');
+            if (parent) {
+                parent.classList.add('loaded');
+                parent.style.background = '#fee';
+            }
+        });
     });
 });
 
