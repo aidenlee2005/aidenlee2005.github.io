@@ -1154,10 +1154,11 @@ section.light {
         background: white;
         width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: right 0.3s ease;
         box-shadow: var(--shadow-md);
         padding: 2rem 0;
         gap: 0;
+        z-index: 999;
     }
 
     .nav-links.active {
@@ -1165,7 +1166,8 @@ section.light {
     }
 
     .burger {
-        display: flex;
+        display: flex !important;
+        z-index: 1000;
     }
 
     .burger.active .line1 {
@@ -1181,25 +1183,29 @@ section.light {
     }
 
     .hero {
-        padding: 60px 0;
+        padding: 40px 0 50px 0;
+        min-height: auto;
     }
 
     .hero-shell {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
+        max-width: 100%;
+        padding: 0 20px;
     }
 
     .hero-photo {
-        height: 350px;
+        height: 280px;
+        order: -1;
     }
 
     .hero-image {
-        max-height: 350px;
+        max-height: 280px;
     }
 
     .hero-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .hero-text h1 {
