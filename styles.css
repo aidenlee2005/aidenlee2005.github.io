@@ -1151,37 +1151,40 @@ section.light {
     .nav-links {
         display: flex;
         position: fixed;
-        right: -280px;
-        top: 70px;
+        right: -200px;
+        top: 80px;
         flex-direction: column;
         background: white;
-        width: 280px;
-        text-align: left;
+        width: 180px;
+        text-align: center;
         transition: right 0.3s ease;
-        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-        padding: 0;
-        gap: 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        padding: 0.8rem 0;
+        gap: 0.3rem;
         z-index: 9999;
-        height: calc(100vh - 70px);
-        overflow-y: auto;
+        height: auto;
+        border-radius: 12px;
+        overflow: visible;
     }
 
     .nav-links li {
         width: 100%;
         padding: 0;
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: none;
     }
 
     .nav-links li a {
         display: block;
         width: 100%;
-        padding: 1.2rem 1.5rem;
-        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
         transition: background 0.2s;
+        color: var(--text-color);
     }
 
     .nav-links li a:hover {
         background: #f8f9fa;
+        color: var(--primary-color);
     }
 
     .nav-links li a::after {
@@ -1189,7 +1192,7 @@ section.light {
     }
 
     .nav-links.active {
-        right: 0;
+        right: 15px;
     }
 
     .burger {
