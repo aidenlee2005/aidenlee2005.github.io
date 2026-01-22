@@ -1,32 +1,16 @@
 // 移动端导航菜单切换
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
-let menuToggling = false;
 
-// 添加触摸和点击事件
 function toggleMenu(e) {
     e.preventDefault();
     e.stopPropagation();
-    
-    // 防止重复触发
-    if (menuToggling) return;
-    menuToggling = true;
-    
     nav.classList.toggle('active');
     burger.classList.toggle('active');
     console.log('Menu toggled:', nav.classList.contains('active'));
-    
-    setTimeout(() => {
-        menuToggling = false;
-    }, 300);
 }
 
-// 使用统一的事件处理，优先使用触摸事件
-if ('ontouchstart' in window) {
-    burger.addEventListener('touchstart', toggleMenu, { passive: false });
-} else {
-    burger.addEventListener('click', toggleMenu);
-}
+burger.addEventListener('click', toggleMenu);
 
 // 点击导航链接后关闭菜单
 document.querySelectorAll('.nav-links a').forEach(link => {
@@ -36,7 +20,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// 点击页面其他地方关闭菜单（只在桌面端）
+// 点击页面其他地方关闭菜单
 document.addEventListener('click', (e) => {
     if (nav.classList.contains('active') && 
         !nav.contains(e.target) && 
@@ -45,16 +29,6 @@ document.addEventListener('click', (e) => {
         burger.classList.remove('active');
     }
 });
-
-// 触摸事件关闭菜单
-document.addEventListener('touchstart', (e) => {
-    if (nav.classList.contains('active') && 
-        !nav.contains(e.target) && 
-        !burger.contains(e.target)) {
-        nav.classList.remove('active');
-        burger.classList.remove('active');
-    }
-}, { passive: true });
 
 // 图片懒加载优化
 document.addEventListener('DOMContentLoaded', function() {
