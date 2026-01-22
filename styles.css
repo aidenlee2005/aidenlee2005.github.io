@@ -1151,11 +1151,11 @@ section.light {
     .nav-links {
         display: flex;
         position: fixed;
-        right: -100%;
+        right: -280px;
         top: 70px;
         flex-direction: column;
         background: white;
-        width: 100%;
+        width: 280px;
         text-align: center;
         transition: right 0.3s ease;
         box-shadow: var(--shadow-md);
