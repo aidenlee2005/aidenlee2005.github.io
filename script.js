@@ -11,7 +11,7 @@ function toggleMenu(e) {
 }
 
 burger.addEventListener('click', toggleMenu);
-burger.addEventListener('touchstart', toggleMenu, { passive: true });
+// burger.addEventListener('touchstart', toggleMenu, { passive: true });
 
 // 点击导航链接后关闭菜单
 document.querySelectorAll('.nav-links a').forEach(link => {
@@ -29,6 +29,32 @@ document.addEventListener('click', (e) => {
         nav.classList.remove('active');
         burger.classList.remove('active');
     }
+});
+
+// 图片懒加载优化
+document.addEventListener('DOMContentLoaded', function() {
+    // 为所有懒加载图片添加加载事件监听
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    lazyImages.forEach(img => {
+        // 图片加载完成后添加loaded类
+        img.addEventListener('load', function() {
+            this.classList.add('loaded');
+        });
+        
+        // 如果图片已经缓存，立即触发loaded
+        if (img.complete) {
+            img.classList.add('loaded');
+        }
+    });
+
+    // 图片预加载占位
+    const allImages = document.querySelectorAll('img');
+    allImages.forEach(img => {
+        const placeholder = document.createElement('div');
+        placeholder.style.backgroundColor = '#f0f0f0';
+        placeholder.style.borderRadius = 'inherit';
+    });
 });
 
 // 平滑滚动
