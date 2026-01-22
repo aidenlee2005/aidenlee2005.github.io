@@ -135,22 +135,6 @@ body {
     background: var(--text-color);
 }
 
-@media (max-width: 900px) and (min-width: 769px) {
-    .nav-links {
-        display: none !important;
-    }
-    .burger {
-        display: flex;
-    }
-}
-
-/* 768px 以下时确保 burger 显示 */
-@media (max-width: 768px) {
-    .burger {
-        display: flex !important;
-    }
-}
-
 /* ============ 首页 Hero ============ */
 .hero {
     min-height: 70vh;
@@ -1154,7 +1138,7 @@ section.light {
 }
 
 /* ============ 响应式设计 ============ */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .nav-links {
         display: flex !important;
         position: fixed;
