@@ -130,38 +130,4 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// // 鼠标跟随效果（可选）
-// document.addEventListener('mousemove', (e) => {
-//     const cursor = document.createElement('div');
-//     cursor.className = 'cursor-effect';
-//     cursor.style.left = e.pageX + 'px';
-//     cursor.style.top = e.pageY + 'px';
-//     document.body.appendChild(cursor);
-    
-//     setTimeout(() => {
-//         cursor.remove();
-//     }, 1000);
-// });
-
-// // 添加粒子背景效果的 CSS
-// const style = document.createElement('style');
-// style.textContent = `
-//     .cursor-effect {
-//         position: absolute;
-//         width: 5px;
-//         height: 5px;
-//         background: radial-gradient(circle, var(--primary-color), transparent);
-//         border-radius: 50%;
-//         pointer-events: none;
-//         animation: cursorFade 1s ease-out forwards;
-//         z-index: 9999;
-//     }
-    
-//     @keyframes cursorFade {
-//         to {
-//             opacity: 0;
-//             transform: scale(3);
-//         }
-//     }
-// `;
-// document.head.appendChild(style);
+// 鼠标粒子特效已取消（保留此注释作为说明，避免误加）

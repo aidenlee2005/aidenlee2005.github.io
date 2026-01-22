@@ -1605,11 +1605,12 @@ section.light {
         font-size: 2.2rem;
     }
 
-    /* 通用内容区：改为单列，保证可读性 */
+    /* 项目区：iPad 上两栏 */
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
     }
 
+    /* 其他内容区：保持单列，保证可读性 */
     .courses-grid {
         grid-template-columns: 1fr;
     }
