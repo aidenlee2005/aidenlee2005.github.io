@@ -1325,7 +1325,7 @@ section.light {
 }
 
 /* 2) 手机 & 小平板：481px ~ 768px */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 728px) {
     /* 移动端导航：抽屉菜单 */
     .nav-links {
         display: flex !important;
@@ -1482,7 +1482,7 @@ section.light {
 /* 3) iPad 等中等屏幕：769px ~ 900px
       - 保持移动端导航
       - hero 恢复为双栏布局 */
-@media (min-width: 769px) and (max-width: 900px) {
+@media (min-width: 729px) and (max-width: 900px) {
     /* 移动端导航：抽屉菜单 */
     .nav-links {
         display: flex !important;
