@@ -502,6 +502,11 @@ section.light {
 .tag-tool { color: #1f6feb; background: #d6eaff; }
 .tag-render { color: #ff9a56; background: #ffe0cc; }
 
+/* iOS / Swift tags */
+.tag-swift { color: #fa7b4d; background: #fff1ea; }
+.tag-ios { color: #0a84ff; background: #e6f1ff; }
+.tag-swiftui { color: #00c853; background: #e6fff0; }
+
 .project-body p {
     color: var(--text-light);
     margin-bottom: 1rem;
