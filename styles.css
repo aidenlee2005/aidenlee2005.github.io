@@ -839,64 +839,71 @@ section.light {
     background: var(--light-color);
 }
 
-.resources-grid {
+.resource-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1.4rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--spacing-3xl);
+    list-style: none;
 }
 
-.resource-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    text-align: center;
-    box-shadow: var(--shadow-md);
-    transition: box-shadow 0.3s;
-    min-height: 220px;
-    display: flex;
-    flex-direction: column;
+.resource-list li {
+    min-width: 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.resource-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 16px;
     align-items: center;
-}
-
-.resource-card:hover {
-    box-shadow: var(--shadow-lg);
-}
-
-.resource-card i {
-    font-size: 2.15rem;
-    color: var(--primary-color);
-    margin-bottom: 0.85rem;
-}
-
-.resource-card h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.65rem;
+    gap: var(--spacing-md);
+    min-height: 72px;
+    height: 100%;
+    padding: var(--spacing-lg) var(--spacing-xs);
     color: var(--dark-color);
-    line-height: 1.45;
-}
-
-.resource-meta {
-    color: var(--text-light);
-    font-size: 0.86rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.resource-link {
-    display: inline-block;
-    padding: 8px 16px;
-    background: var(--gradient);
-    color: white;
-    border-radius: 6px;
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: box-shadow 0.3s, background 0.3s;
-    margin-top: auto;
+    transition: background-color 0.15s, color 0.15s;
 }
 
-.resource-link:hover {
-    box-shadow: var(--shadow-md);
+.resource-name {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.resource-row i {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    justify-self: end;
+}
+
+.resource-row:hover,
+.resource-row:focus-visible {
+    background: white;
+    color: var(--primary-color);
+}
+
+.resource-row:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: -2px;
+}
+
+@media (max-width: 900px) {
+    .resource-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .resource-row {
+        gap: var(--spacing-sm);
+        min-height: 64px;
+        padding: var(--spacing-md) 0;
+    }
+
+    .resource-name {
+        font-size: 0.95rem;
+    }
 }
 
 /* ============ 联系 ============ */
