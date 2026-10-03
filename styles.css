@@ -841,17 +841,21 @@ section.light {
 
 .resources-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.4rem;
 }
 
 .resource-card {
     background: white;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: var(--radius-md);
     text-align: center;
     box-shadow: var(--shadow-md);
     transition: box-shadow 0.3s;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .resource-card:hover {
@@ -859,15 +863,23 @@ section.light {
 }
 
 .resource-card i {
-    font-size: 2.5rem;
+    font-size: 2.15rem;
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.85rem;
 }
 
 .resource-card h3 {
     font-size: 1.05rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.65rem;
     color: var(--dark-color);
+    line-height: 1.45;
+}
+
+.resource-meta {
+    color: var(--text-light);
+    font-size: 0.86rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .resource-link {
@@ -880,6 +892,7 @@ section.light {
     font-size: 0.9rem;
     font-weight: 600;
     transition: box-shadow 0.3s, background 0.3s;
+    margin-top: auto;
 }
 
 .resource-link:hover {
